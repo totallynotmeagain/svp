@@ -76,11 +76,23 @@ LIB_DIR = 'Lib'
 FILES_DIR = 'Files'
 
 def test_to_file(name):
+    """
+    Appends the extension 'tst' to given name
+
+    :param name: str
+    :return: name+.tst
+    """
     if not is_test_file(name):
         return name + TEST_EXT
     return name
 
 def file_to_test(name):
+    """
+    Crude function that removes the last 4 char of a string
+
+    :param name: string with extension
+    :return: string without (hopefully) extension
+    """
     if is_test_file(name):
         return name[:-4]
     return name
